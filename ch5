@@ -1,0 +1,23 @@
+let headers={
+    text: { 'Content-Type': 'Text/Plain' },
+    html: { 'Content-Type': 'Text/Html' }
+}
+function chall5(response) {
+    console.log('this is page1controllerC');
+    response.writeHead(200, headers.txt);
+    response.write("challenge 5: salam!");
+    response.end();
+}
+let routes = {
+  ch5:chall5
+}
+function requestHandler4(request, response) {
+    console.log('url ', request.url);
+    console.log('splitted ', request.url.split('/'));
+    let firstPart = request.url.split('/')[1];
+    console.log('fistPart ', firstPart);
+
+    if (firstPart !== 'favicon.ico') {
+        routes[firstPart](response);
+    }
+}
