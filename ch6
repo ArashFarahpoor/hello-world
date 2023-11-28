@@ -1,0 +1,27 @@
+function chall6(response) {
+    response.writeHead(200, headers.html);
+    response.write(`<html>
+    <head>
+        <style>
+            div{
+                width: 200px;
+                height: 50px;
+                background-color: lightgreen;
+                padding: 20px;
+            }
+        </style>
+    </head>
+    <body>
+    <div>
+    <b>challenge 3</b></br>
+    salam
+    </div>
+    </body>
+    </html>`);
+    response.end();
+}
+let routes = {
+  ch5:chall5,
+  ch6:chall6
+
+}
